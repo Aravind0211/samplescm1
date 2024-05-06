@@ -6,5 +6,13 @@ pipeline{
         sh './gradlew build'
       }
     }
+    stage('Test'){
+      tools{
+        jdk 'java-8'
+      }
+      steps{
+        sh './gradlew test'
+      }
+    }
   }
 }
