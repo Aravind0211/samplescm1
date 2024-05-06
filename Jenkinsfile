@@ -75,5 +75,10 @@ pipeline{
         }
       }
     }
+    stage('E-mail Notification'){
+      steps{
+        mail bcc: '',body: 'My First SCM pipeline',cc: '',from: '',reply to: '',subject: 'SCM Pipeline,to: 'aravindthiru159@gmail.com
+      }
+    }
   }
 }
