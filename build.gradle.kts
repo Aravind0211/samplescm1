@@ -6,6 +6,17 @@ plugins {
 repositories {
     mavenCentral()
 }
+cyclonedxBom {
+ includeConfigs = ["runtimeClasspath"]
+ projectType = "application"
+ schemaVersion = "1.5"
+ destination = file("build/reports")
+ outputName = "bom"
+ outputFormat = "xml"
+ includeBomSerialNumber = false
+ includeLicenseText = false
+ componentVersion = "2.0.0"
+}
 
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.2"))
