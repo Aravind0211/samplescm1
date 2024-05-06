@@ -16,7 +16,7 @@ pipeline{
     }
     stage('Package'){
       steps{
-        sh './cyclonedxBom'
+        sh './gradlew cyclonedxBom'
       }
     }
     stage("Static Analysis") {
