@@ -6,6 +6,20 @@ plugins {
 repositories {
     mavenCentral()
 }
+import org.cyclonedx.gradle.CycloneDxTask
+
+tasks.withType<CycloneDxTask> {
+    includeConfigs = setOf("runtimeClasspath")
+    projectType = "application"
+    schemaVersion = "1.5"
+    destination = file("build/reports")
+    outputName = "bom"
+    outputFormat = CycloneDxTask.OutputFormat.XML
+    includeBomSerialNumber = false
+    includeLicenseText = false
+    componentVersion = "2.0.0"
+}
+
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
