@@ -6,6 +6,7 @@ plugins {
 repositories {
     mavenCentral()
 }
+
 import org.cyclonedx.gradle.CycloneDxTask
 
 tasks.withType<CycloneDxTask> {
@@ -21,8 +22,9 @@ tasks.withType<CycloneDxTask> {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
 }
 
 dependencies {
@@ -32,10 +34,4 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
-}
-
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(8))
-    }
 }
