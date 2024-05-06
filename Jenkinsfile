@@ -31,7 +31,7 @@ pipeline{
     }
     stage('Publish'){
       steps{
-        nexusArtifactUploader artifacts:[[artifactId: 'scm1',classifier:'',file:'/home/logicfocus/.jenkins/workspace/Aravind/scm1/build/libs/gradle-build-scan-quickstart.jar',type:'jar']]credentialsId:'nexus1',groupId: 'com.logicfocus',nexusUrl: '192.168.1.30:8081',nexusVersion: 'nexus3',protocol: 'http',repository: 'scm1',Version: '1.0.1'
+        nexusArtifactUploader artifacts: [[artifactId: 'scm1',classifier:'',file:'/home/logicfocus/.jenkins/workspace/Aravind/scm1/build/libs/gradle-build-scan-quickstart.jar',type:'jar']] credentialsId:'nexus1',groupId: 'com.logicfocus',nexusUrl: '192.168.1.30:8081',nexusVersion: 'nexus3',protocol: 'http',repository: 'scm1',version: '1.0.1'
       }
     }
   }
