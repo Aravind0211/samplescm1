@@ -1,21 +1,10 @@
 plugins {
     id("java")
-    id 'org.cyclonedx.bom' version '1.8.2'
+    id 'org.cyclonedx.bom' version '1.8.1'
 }
 
 repositories {
     mavenCentral()
-}
-cyclonedxBom {
- includeConfigs = ["runtimeClasspath"]
- projectType = "application"
- schemaVersion = "1.5"
- destination = file("build/reports")
- outputName = "bom"
- outputFormat = "xml"
- includeBomSerialNumber = false
- includeLicenseText = false
- componentVersion = "2.0.0"
 }
 
 dependencies {
