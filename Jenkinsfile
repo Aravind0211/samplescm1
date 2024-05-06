@@ -2,6 +2,9 @@ pipeline{
   agent any 
   stages{
     stage('Build'){
+      tools {
+        jdk 'java-17'
+      }
       steps{
         sh './gradlew build'
       }
