@@ -14,6 +14,11 @@ pipeline{
         sh './gradlew test'
       }
     }
+    stage('Package'){
+      steps{
+        sh './cyclonedxBom'
+      }
+    }
     stage("Static Analysis") {
       tools {
         jdk 'java-8'
